@@ -52,10 +52,10 @@ if mode == "dev":
 		updater.idle()
 elif mode == "prod":
 	def run(updater):
-		PORT = int(os.environ.get("PORT", "8443"))
+		PORT = "8443"
 		HEROKU_APP_NAME = "bakatempa"
 		updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=tk)
-		updater.bot.set_webhook("https://{HEROKU_APP_NAME}.herokuapp.com/"+ tk)
+		updater.bot.set_webhook("https://bakatempa.herokuapp.com/"+ tk)
 else:
 	sys.exit()
 
